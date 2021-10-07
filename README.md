@@ -5,6 +5,7 @@ I chose to create a game for my project because I like video games and want to e
 I chose to follow a tutorial from the Unity Learn website because I am familiar with games created in Unity.
 The game is called Ruby's Adventure. The player follows Ruby on a quest to save her town.
 Although most of the code will be from the tutorial, I plan on customizing the game to make it in my own style.
+*The project has not been created yet. This repository is a placeholder.*
 
 ## Citations
 I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
