@@ -7,7 +7,7 @@ The game is called Ruby's Adventure. The player follows Ruby on a quest to save 
 Although most of the code will be from the tutorial, I plan on customizing the game to make it in my own style.
 
 ## Citations
-I used the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
+I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
 The tutorial can be found here: https://learn.unity.com/project/ruby-s-2d-rpg.
 
 ## Features
