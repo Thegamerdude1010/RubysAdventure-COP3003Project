@@ -10,7 +10,7 @@ Although most of the code will be from the tutorial, I plan on customizing the g
 Features will be added here as I progress through the tutorial.
 
 ## Notes
-
+All script files created using Unity (Create > C# Script) have a class that is a subclass of MonoBehaviour. 
 
 ## Citations
 I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
