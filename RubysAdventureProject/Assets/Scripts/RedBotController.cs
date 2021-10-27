@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedBotController : EnemyController
+//I do not believe you can specify visibility for inheritance in C#
+//Trying to change visibility (Ex: public class SubClass : public BaseClass) causes an error
+public class RedBotController :  EnemyController
 {
-
-    EnemyClass redEnemy = new EnemyClass(-3, false, 2);
+    EnemyClass redEnemy = new EnemyClass(-3, false, 2.0f);
 
     Rigidbody2D rigidbody2d;
 
@@ -30,15 +31,15 @@ public class RedBotController : EnemyController
     {
         Vector2 position = rigidbody2d.position;
 
-        if (redEnemy.vertical)
+        if (redEnemy.GetVertical())
         {
-            position.y = position.y + Time.deltaTime * redEnemy.speed * direction;
+            position.y = position.y + Time.deltaTime * redEnemy.GetSpeed() * direction;
             animator.SetFloat("Move X", 0);
             animator.SetFloat("Move Y", direction);
         }
         else
         {
-            position.x = position.x + Time.deltaTime * redEnemy.speed * direction;
+            position.x = position.x + Time.deltaTime * redEnemy.GetSpeed() * direction;
             animator.SetFloat("Move X", direction);
             animator.SetFloat("Move Y", 0);
         }
@@ -52,7 +53,7 @@ public class RedBotController : EnemyController
 
         if (player != null)
         {
-            player.ChangeHealth(redEnemy.damage);
+            player.ChangeHealth(redEnemy.GetDamage());
         }
     }
 }
