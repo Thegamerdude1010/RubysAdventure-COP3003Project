@@ -7,14 +7,18 @@ The game is called Ruby's Adventure. The player follows Ruby on a quest to save 
 Although most of the code will be from the tutorial, I plan on customizing the game to make it in my own style.
 
 ## Features
-Features will be added here as I progress through the tutorial.
+Features will be added here when I finish through the tutorial.
+
+## How To Run
+Currently, the program will only run using Unity. After opening the program in Unity, click the "Play" button at the top to demonstrate function.
+<br /> Unity 2020.3.19f1 is being used.
 
 ## Notes
-All script files created using Unity (Create > C# Script) have a class that is a subclass of MonoBehaviour. 
+All script files created using Unity (Create > C# Script) have a class that is a subclass of MonoBehaviour.
 
 ## Issues
 Unity uses C#, which, from my understanding, doesn't employ header files. I could only find forum posts and the general consensus is C# doesn't use header files.
-I could not find a way to use initalization lists in C#
+<br />I could not find a way to use initalization lists in C#
 
 ## Citations
 I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
