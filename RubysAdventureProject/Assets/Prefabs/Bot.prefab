@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1044221772684238547}
   - component: {fileID: 1044221772684238546}
   - component: {fileID: 1044221772684238545}
+  - component: {fileID: 4553574497056161035}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -98,10 +99,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04421702, y: -0.44708377}
+  m_Offset: {x: -0.04421702, y: 1.2943743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
@@ -109,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66357845, y: 1.4693116}
+  m_Size: {x: 0.66357845, y: 2.440385}
   m_EdgeRadius: 0
 --- !u!50 &1044221772684238546
 Rigidbody2D:
@@ -144,6 +145,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7b478192274b24ca4e4389c07fd0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertical: 0
   changeTime: 2
+  damage: 1
+  vertical: 0
   speed: 3
+--- !u!95 &4553574497056161035
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044221772684238544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5dc8a91828d06744a2aaf45db17c890, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public bool vertical;
     public float changeTime = 3.0f;
 
     
@@ -25,16 +24,6 @@ public class EnemyController : MonoBehaviour
         {
             direction = -direction;
             timer = changeTime;
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        RubyController player = other.gameObject.GetComponent<RubyController>();
-
-        if (player != null)
-        {
-            player.ChangeHealth(-1);
         }
     }
 }
