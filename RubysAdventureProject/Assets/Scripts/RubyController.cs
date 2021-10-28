@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// All C# scripts are subclasses of the MonoBehaviour class.
 public class RubyController : MonoBehaviour  //this is a class that stores data for Ruby, the main character.
                                              //It is a subclass of MonoBehavior, a "base class from which every Unity script derives"
 {

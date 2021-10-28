@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+// All C# scripts are subclasses of the MonoBehaviour class.
+public class EnemyController : MonoBehaviour 
 {
-    private float changeTime = 3.0f;
 
+    // By making this variable public, its value can be adjusted within the Unity editor.
+    public float changeTime = 3.0f; 
+
+    // This demonstrates creating an object using the default or parameterless constructor.
     EnemyClass enemy = new EnemyClass();
     
     float timer;
@@ -19,6 +23,7 @@ public class EnemyController : MonoBehaviour
 
     protected void Update()
     {
+        // This changes the enemies direction after a specified period of time.
         timer -= Time.deltaTime;
 
         if (timer < 0)
