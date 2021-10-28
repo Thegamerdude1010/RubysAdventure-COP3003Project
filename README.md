@@ -17,8 +17,10 @@ Currently, the program will only run using Unity. After opening the program in U
 All script files created using Unity (Create > C# Script) have a class that is a subclass of MonoBehaviour.
 
 ## Issues
-Unity uses C#, which, from my understanding, doesn't employ header files. I could only find forum posts and the general consensus is C# doesn't use header files.
-<br />I could not find a way to use initalization lists in C#
+Issues are added as comments in the files where they are encountered.
+
+## Comparing the Procedural and Object-Oriented Approaches
+Procedural programming uses functions that can be called at any time, which are used to manipulate data called variables. In procedural programming, functions are not easily reused or modified. Object-Oriented programming (OOP) uses classes and objects, which allows the code to be reused or modified without significant effort using inheritance. Inheritance allows subclasses to inherit members and functions of a base class. Since any function can be used to modify data, there is a lack of security when using procedural programming. Procedural programming uses scope to define where data and variables can be used, but there is no way to explicitly protect data from functions. On the other hand, OOP uses encapsulation and access specifiers to control access to data, allowing the programmer to restrict access to data. In OOP, a programmer can restrict access to variables so only the methods of the same class or its subclasses can be used to modify the data. Object-oriented programming allows for polymorphism, where methods can be redefined in subclasses so the programmer does not have to rewrite it in the base class. In procedural programming, functions can only be defined once, which means it must be modified everytime features need to be added. Even though OOP seems to be better, procedural programming is still used in conjuction with OOP.
 
 ## Citations
 I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
