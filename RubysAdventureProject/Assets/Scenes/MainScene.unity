@@ -318,10 +318,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot
       objectReference: {fileID: 0}
-    - target: {fileID: 1044221772684238545, guid: 14ff841a3b7dc2c43b541a7e6dff8598, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1044221772684238637, guid: 14ff841a3b7dc2c43b541a7e6dff8598, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -3765,10 +3761,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBot
       objectReference: {fileID: 0}
-    - target: {fileID: 3131942264662265987, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3131942264662265989, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -3812,14 +3804,6 @@ PrefabInstance:
     - target: {fileID: 3131942264662265989, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131942264662265991, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
-      propertyPath: m_Size.y
-      value: 2.525056
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131942264662265991, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.3314383
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cdafc46f9b6a04682903f54b312f08, type: 3}
