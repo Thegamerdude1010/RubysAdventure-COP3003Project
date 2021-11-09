@@ -11,18 +11,30 @@ public class EnemyController : MonoBehaviour
 
     // This demonstrates creating an object using the default or parameterless constructor.
     EnemyClass enemy = new EnemyClass();
-    
+
+    protected Rigidbody2D rigidbody2d;
+
+    Animator animator;
+
     float timer;
     protected int direction = 1;
+
+    protected bool broken = true;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = changeTime;
+
     }
 
     protected void Update()
     {
+        if (!broken)
+        {
+            return;
+        }
+
         // This changes the enemies direction after a specified period of time.
         timer -= Time.deltaTime;
 
@@ -42,4 +54,16 @@ public class EnemyController : MonoBehaviour
             player.ChangeHealth(enemy.GetDamage());
         }
     }
+
+    // Public because we want to call it from elsewhere like the projectile script
+    // This function "fixes" the enemy and stops their movement
+    // It prevents enemies from damaging Ruby by removing the rigidbody component
+    public void Fix()
+    {
+        animator = GetComponent<Animator>();
+        broken = false;
+        rigidbody2d.simulated = false;
+        animator.SetTrigger("Fixed");
+    }
+
 }

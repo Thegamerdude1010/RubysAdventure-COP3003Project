@@ -15,7 +15,7 @@ public class BotController : EnemyController
     // and using the default (parameterless) constructor to assign default values to private members.
     EnemyClass enemy = new EnemyClass();
 
-    Rigidbody2D rigidbody2d;
+    //Rigidbody2D rigidbody2d;
 
     Animator animator;
 
@@ -30,6 +30,10 @@ public class BotController : EnemyController
 
     void FixedUpdate()
     {
+        if (!broken)
+        {
+            return;
+        }
         Vector2 position = rigidbody2d.position;
 
         if (enemy.GetVertical())
@@ -50,7 +54,7 @@ public class BotController : EnemyController
 
     // If the function below was apart of this class, it would overridee the base class' version
     // Since it is not apart of the code, this class defaults to the base class' version
-    
+
     //void OnCollisionEnter2D(Collision2D other)
     //{
     //    RubyController player = other.gameObject.GetComponent<RubyController>();

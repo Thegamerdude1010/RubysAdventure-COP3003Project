@@ -13,8 +13,9 @@ public class RedBotController :  EnemyController
     // This is demonstrating creating an object of EnemyClass
     // and using a constructor to assign values to private members.
     EnemyClass redEnemy = new EnemyClass(-3, false, 2.0f);
+    
 
-    Rigidbody2D rigidbody2d;
+    //Rigidbody2D rigidbody2d;
 
     Animator animator;
 
@@ -37,6 +38,10 @@ public class RedBotController :  EnemyController
 
     void FixedUpdate()
     {
+        if (!broken)
+        {
+            return;
+        }
         Vector2 position = rigidbody2d.position;
 
         if (redEnemy.GetVertical())
@@ -66,4 +71,6 @@ public class RedBotController :  EnemyController
             player.ChangeHealth(redEnemy.GetDamage());
         }
     }
+
+
 }

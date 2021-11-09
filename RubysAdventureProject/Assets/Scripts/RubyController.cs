@@ -8,6 +8,8 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
 {
     public float speed = 3.0f;
 
+    public GameObject projectilePrefab;
+
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
 
@@ -59,6 +61,11 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
     }
 
     void FixedUpdate()
@@ -83,5 +90,16 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+    }
+
+    void Launch() //lets Ruby shoot projectiles
+    {
+        // Quaternion.identity means "no rotation"
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 300);
+
+        animator.SetTrigger("Launch");
     }
 }
