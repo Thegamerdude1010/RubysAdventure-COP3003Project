@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 
     protected Rigidbody2D rigidbody2d;
 
-    Animator animator;
+    public Animator animator;
 
     float timer;
     protected int direction = 1;

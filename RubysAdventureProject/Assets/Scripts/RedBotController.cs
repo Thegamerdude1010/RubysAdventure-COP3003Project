@@ -17,7 +17,7 @@ public class RedBotController :  EnemyController
 
     //Rigidbody2D rigidbody2d;
 
-    Animator animator;
+    //Animator animator;
 
     // Start is called before the first frame update
     void Start()
