@@ -15,10 +15,6 @@ public class BotController : EnemyController
     // and using the default (parameterless) constructor to assign default values to private members.
     EnemyClass enemy = new EnemyClass();
 
-    //Rigidbody2D rigidbody2d;
-
-    //Animator animator;
-
     // Start is called before the first frame update
     void Start()
     {

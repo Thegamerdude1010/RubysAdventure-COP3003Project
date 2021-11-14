@@ -27,6 +27,7 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
     Vector2 lookDirection = new Vector2(1, 0);
 
     public ParticleSystem collectHealth;
+    public ParticleSystem hitRuby;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +95,10 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         if (amount > 0)
         {
             collectHealth.Play();
+        }
+        if (amount < 0)
+        {
+            hitRuby.Play();
         }
         Debug.Log(currentHealth + "/" + maxHealth);
     }
