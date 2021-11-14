@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         // This destroys the projectile after it has traveled for a certain distance
-        if (transform.position.magnitude > 10.0f)
+        if (transform.position.magnitude > 100.0f)
         {
             Destroy(gameObject);
         }

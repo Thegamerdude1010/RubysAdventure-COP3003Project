@@ -14,7 +14,7 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
     public float timeInvincible = 2.0f;
 
     int currentHealth;
-    public int health { get { return currentHealth; } } //this allows us to get Ruby's current health, it uses C# properties
+    public int health { get { return currentHealth; } } //this allows us to get Ruby's current health, it uses C# properties (Unity Learn Tutorial)
 
     bool isInvincible;
     float invincibleTimer;
@@ -100,7 +100,9 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         {
             hitRuby.Play();
         }
-        Debug.Log(currentHealth + "/" + maxHealth);
+
+        // This line updates the healthbar dynamically when Ruby's health changes (Unity Learn Tutorial)
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 
     void Launch() //lets Ruby shoot projectiles

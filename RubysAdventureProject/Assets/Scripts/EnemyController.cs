@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour 
 {
 
-    // By making this variable public, its value can be adjusted within the Unity editor.
+    // By making this variable public, its value can be adjusted within the Unity editor. (Unity Learn Tutorial)
     public float changeTime = 3.0f; 
 
     // This demonstrates creating an object using the default or parameterless constructor.
