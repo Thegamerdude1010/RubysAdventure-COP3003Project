@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NonPlayerCharacter : MonoBehaviour
+{
+    // Setting variables to public alows us to acces them within the Unity editor.
+    // This allows us to change variable or point them to game objects.
+    public float displayTime = 4.0f;
+    public GameObject dialogBox;
+
+    // Variables default to private, so the private keyword is unnecessary.
+    float timerDisplay;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        dialogBox.SetActive(false); //This makes sure the dialog box is disabled
+        timerDisplay = -1.0f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(timerDisplay >= 0) // This checks if the dialog box is being displayed
+        {
+            timerDisplay -= Time.deltaTime; // This decrements the timer
+            if(timerDisplay < 0) // This hides the dialog box when the timer reaches 0
+            {
+                dialogBox.SetActive(false);
+            }
+        }
+    }
+
+    // This function displays the dialog box for the amount of time specified.
+    public void DisplayDialog()
+    {
+        timerDisplay = displayTime;
+        dialogBox.SetActive(true);
+    }
+}

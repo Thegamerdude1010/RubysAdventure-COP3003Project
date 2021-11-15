@@ -65,9 +65,34 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C)) // This tests to see if the c key is pressed
         {
             Launch();
+        }
+
+        // This is for Raycasting. The tutorial says it is the action of casting a ray and seeing if it collodes with anything.
+        // This lets Ruby talk to the NPC only when she is looking up from infron of him
+        if (Input.GetKeyDown(KeyCode.X)) // This tests to see if the x key is pressed
+        {
+            // This stores the result of a raycast.
+            // The arguments are:
+            // 1. The starting position of the ray.
+            // 2. The direction, which in this case is the direction Ruby is looking.
+            // 3. The maximum distance of the ray.
+            // 4. A layer mask to let us test for certain layers.
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+
+            if (hit.collider != null) // Test to see if the raycast has hit something
+            {
+                // Checks if the object holds the NonPlayerCharacter script
+                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                if (character != null)
+                {
+                    // Runs the NPC script display function to display the textbox
+                    character.DisplayDialog();
+                }
+
+            }
         }
     }
 
