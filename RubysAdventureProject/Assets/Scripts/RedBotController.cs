@@ -8,12 +8,13 @@ using UnityEngine;
 
 //I do not believe you can specify visibility for inheritance in C#
 //Trying to change visibility (Ex: public class SubClass : public BaseClass) causes an error
-public class RedBotController :  EnemyController
+public class RedBotController : EnemyController
 {
     // This is demonstrating creating an object of EnemyClass
     // and using a constructor to assign values to private members.
-    EnemyClass redEnemy = new EnemyClass(-3, false, 2.0f);
-    
+    EnemyClass redEnemy = new EnemyClass(-3, 2.0f);
+
+    public bool vertical;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class RedBotController :  EnemyController
         }
         Vector2 position = rigidbody2d.position;
 
-        if (redEnemy.GetVertical())
+        if (vertical)
         {
             position.y = position.y + Time.deltaTime * redEnemy.GetSpeed() * direction;
             animator.SetFloat("Move X", 0);

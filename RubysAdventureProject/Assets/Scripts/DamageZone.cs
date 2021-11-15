@@ -5,6 +5,7 @@ using UnityEngine;
 // All C# scripts are subclasses of the MonoBehaviour class.
 public class DamageZone : MonoBehaviour
 {
+
     // The OnTriggerStay2D function allows for continuous damage.
     // When Ruby enters the gameobjects collider box, she will continue to take
     // damage until she is moved outside of the collider.
