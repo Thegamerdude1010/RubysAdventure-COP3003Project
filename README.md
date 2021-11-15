@@ -15,6 +15,8 @@ Currently, the program will only run using Unity. After opening the program in U
 
 ## Notes
 All script files created using Unity (Create > C# Script) have a class that is a subclass of MonoBehaviour.
+<br /> Not all of the assets provided by the tutorial were used.
+<br /> The tutorial only discussed how to do things once, then let the user (Me) finish.
 
 ## Issues
 Issues are added as comments in the files where they are encountered.
