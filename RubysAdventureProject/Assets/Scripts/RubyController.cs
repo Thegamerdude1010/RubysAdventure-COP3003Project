@@ -29,6 +29,12 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
     public ParticleSystem collectHealth;
     public ParticleSystem hitRuby;
 
+    AudioSource audioSource;
+
+    // these store the audio clips for throwing a cog and getting hit
+    public AudioClip throwCog;
+    public AudioClip getHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +42,8 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         currentHealth = maxHealth;
 
         animator = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -115,15 +123,13 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
             }
             isInvincible = true;
             invincibleTimer = timeInvincible;
+            hitRuby.Play();
+            PlaySound(getHit);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         if (amount > 0)
         {
-            collectHealth.Play();
-        }
-        if (amount < 0)
-        {
-            hitRuby.Play();
+            collectHealth.Play(); // plays the collect health particle effects
         }
 
         // This line updates the healthbar dynamically when Ruby's health changes (Unity Learn Tutorial)
@@ -139,5 +145,13 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
+
+        PlaySound(throwCog);
+    }
+
+    // This function takes an audio clip as a parameter so the audio source can play the specific audio clip.
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

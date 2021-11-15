@@ -5,6 +5,9 @@ using UnityEngine;
 // All C# scripts are subclasses of the MonoBehaviour class.
 public class HealthCollectible : MonoBehaviour
 {
+    // Setting this public allows us to assign the audio clip in the editor
+    public AudioClip collectedClip;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
@@ -20,7 +23,11 @@ public class HealthCollectible : MonoBehaviour
                 controller.ChangeHealth(1);
 
                 // This destroys the game pbject when it is picked up
-                Destroy(gameObject); 
+                Destroy(gameObject);
+
+                // Passes the assigned audio clip to the PlaySound function in the Ruby controller.
+                // Now, the sound assigned to collectedClip will play when the health pickup is collected.
+                controller.PlaySound(collectedClip);
             }
         }
     }

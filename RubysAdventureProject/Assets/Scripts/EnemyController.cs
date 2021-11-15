@@ -24,11 +24,15 @@ public class EnemyController : MonoBehaviour
 
     protected bool broken = true;
 
+    protected AudioSource audioSource;
+
+    public AudioClip getHit;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         timer = changeTime;
-
     }
 
     protected void Update()
@@ -46,6 +50,7 @@ public class EnemyController : MonoBehaviour
             direction = -direction;
             timer = changeTime;
         }
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -69,6 +74,12 @@ public class EnemyController : MonoBehaviour
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
         fixBotEffect.Play();
+        PlaySound(getHit);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
 }

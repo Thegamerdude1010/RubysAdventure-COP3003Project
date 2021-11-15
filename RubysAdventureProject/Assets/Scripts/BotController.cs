@@ -20,6 +20,9 @@ public class BotController : EnemyController
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        // This was placed here because it was not working in the base class
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Since there is no Update function, the base classes Update function is called

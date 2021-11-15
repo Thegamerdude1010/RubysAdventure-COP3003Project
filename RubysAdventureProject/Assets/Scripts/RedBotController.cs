@@ -20,6 +20,9 @@ public class RedBotController :  EnemyController
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        // This was placed here because it was not working in the base class
+        audioSource = GetComponent<AudioSource>();
     }
 
     new
