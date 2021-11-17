@@ -28,3 +28,6 @@ Procedural programming uses functions that can be called at any time, which are 
 I am using the "Ruby's Adventure: 2D Beginner" tutorial from the Unity Learn website. The publisher is Unity Technologies.
 The tutorial can be found here: https://learn.unity.com/project/ruby-s-2d-rpg.
 
+## Supplemental Program
+A supplemental program to demonstrate my knowledge is located here:
+https://github.com/Thegamerdude1010/COP3003-SupplementalProgram.
