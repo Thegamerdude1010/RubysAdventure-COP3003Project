@@ -12,20 +12,26 @@ public class NonPlayerCharacter : MonoBehaviour
     // Variables default to private, so the private keyword is unnecessary.
     float timerDisplay;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update (Auto Generated).
     void Start()
     {
-        dialogBox.SetActive(false); //This makes sure the dialog box is disabled
+        //This makes sure the dialog box is disabled
+        dialogBox.SetActive(false); 
+
+        // This makes sure the dialog box doesn't display when it is not supposed to.
         timerDisplay = -1.0f;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame (Auto Generated).
     void Update()
     {
-        if(timerDisplay >= 0) // This checks if the dialog box is being displayed
+        if(timerDisplay >= 0) // This checks if the dialog box is being displayed.
         {
-            timerDisplay -= Time.deltaTime; // This decrements the timer
-            if(timerDisplay < 0) // This hides the dialog box when the timer reaches 0
+            // This decrements the timer.
+            timerDisplay -= Time.deltaTime;
+
+            // This hides the dialog box when the timer reaches 0.
+            if (timerDisplay < 0) 
             {
                 dialogBox.SetActive(false);
             }
@@ -36,6 +42,8 @@ public class NonPlayerCharacter : MonoBehaviour
     public void DisplayDialog()
     {
         timerDisplay = displayTime;
+
+        // Makes the dialog active, displaying it in the game.
         dialogBox.SetActive(true);
     }
 }
