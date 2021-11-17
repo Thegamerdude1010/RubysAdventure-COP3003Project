@@ -6,20 +6,35 @@ using UnityEngine;
 public class RubyController : MonoBehaviour  //this is a class that stores data for Ruby, the main character.
                                              //It is a subclass of MonoBehavior, a "base class from which every Unity script derives"
 {
+    // Variable for Ruby's speed. Public to allow it to be adjusted in the Unity editor.
     public float speed = 3.0f;
 
+    // Stores the GameObject for the cog projectile.
     public GameObject projectilePrefab;
 
+    // Variable for Ruby's max health. Public to allow changes in the Unity Editor.
     public int maxHealth = 5;
+
+    // Variable for Ruby's invincibility. Public to allow changes in the Unity Editor.
+    // This prevents Ruby from continuously taking damage for the specified time.
     public float timeInvincible = 2.0f;
 
+    // Private variable to store Ruby's health.
     int currentHealth;
-    public int health { get { return currentHealth; } } //this allows us to get Ruby's current health, it uses C# properties (Unity Learn Tutorial)
 
+    // This allows us to get Ruby's current health, it uses C# properties (Unity Learn).
+    public int health { get { return currentHealth; } } 
+
+    // Boolean to determine if the invincibility timer is active.
     bool isInvincible;
+
+    // The invincibility timer.
     float invincibleTimer;
 
+    // Allows us to store the rigid body and access it in the script (Unity Learn).
     Rigidbody2D rigidbody2d;
+
+    // Variables for storing the results of Input.GetAxis() (Unity Learn).
     float horizontal;
     float vertical;
 
@@ -31,11 +46,11 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
 
     AudioSource audioSource;
 
-    // these store the audio clips for throwing a cog and getting hit
+    // These store the audio clips for throwing a cog and getting hit.
     public AudioClip throwCog;
     public AudioClip getHit;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update.
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -46,9 +61,11 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
+        // The tutorial doesn't explain what GetAxis does.
+        // I assume it allows the user to retrieve the axis position.
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
@@ -73,14 +90,14 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
-        if (Input.GetKeyDown(KeyCode.C)) // This tests to see if the c key is pressed
+        if (Input.GetKeyDown(KeyCode.C)) // This tests to see if the c key is pressed.
         {
             Launch();
         }
 
         // This is for Raycasting. The tutorial says it is the action of casting a ray and seeing if it collodes with anything.
-        // This lets Ruby talk to the NPC only when she is looking up from infron of him
-        if (Input.GetKeyDown(KeyCode.X)) // This tests to see if the x key is pressed
+        // This lets Ruby talk to the NPC only when she is looking up from infront of him.
+        if (Input.GetKeyDown(KeyCode.X)) // This tests to see if the x key is pressed.
         {
             // This stores the result of a raycast.
             // The arguments are:
@@ -88,15 +105,16 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
             // 2. The direction, which in this case is the direction Ruby is looking.
             // 3. The maximum distance of the ray.
             // 4. A layer mask to let us test for certain layers.
+            // (Unity Learn)
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
 
-            if (hit.collider != null) // Test to see if the raycast has hit something
+            if (hit.collider != null) // Test to see if the raycast has hit something.
             {
-                // Checks if the object holds the NonPlayerCharacter script
+                // Checks if the object holds the NonPlayerCharacter script.
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
-                    // Runs the NPC script display function to display the textbox
+                    // Runs the NPC script display function to display the textbox.
                     character.DisplayDialog();
                 }
 
@@ -104,6 +122,7 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
         }
     }
 
+    // FixedUpdate is used when you want to directly influence physics components or objects (Unity Learn)
     void FixedUpdate()
     {
         Vector2 position = rigidbody2d.position;
@@ -112,6 +131,8 @@ public class RubyController : MonoBehaviour  //this is a class that stores data 
 
         rigidbody2d.MovePosition(position);
     }
+
+
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
