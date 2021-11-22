@@ -6,6 +6,7 @@ The game is called Ruby's Adventure. The player follows Ruby on a quest to save 
 Although most of the code will be from the tutorial, I plan on customizing the game to make it in my own style.
 
 ## Demonstration
+![Demonstration](docs/gamedemonstration.gif)
 
 ## Documentation
 
