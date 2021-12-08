@@ -36,6 +36,7 @@ public class RedBotController : EnemyController
         base.Update();
     }
 
+    // This function changes the bots position.
     void FixedUpdate()
     {
         if (!broken)
@@ -44,6 +45,8 @@ public class RedBotController : EnemyController
         }
         Vector2 position = rigidbody2d.position;
 
+        // If the bot is supposed to travel vertically, it changes y position,
+        // otherwise it changes the x position.
         if (vertical)
         {
             position.y = position.y + Time.deltaTime * redEnemy.GetSpeed() * direction;

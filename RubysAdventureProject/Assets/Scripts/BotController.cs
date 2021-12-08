@@ -14,7 +14,7 @@ public class BotController : EnemyController
     // This is demonstrating creating an object of enemy class
     // and using the default (parameterless) constructor to assign default values to private members.
     EnemyClass enemy = new EnemyClass();
-    
+
     // public variables allow us to change them in the unity editor
     public bool vertical;
 
@@ -30,6 +30,7 @@ public class BotController : EnemyController
 
     // Since there is no Update function, the base classes Update function is called
 
+    // This function changes the bots position.
     void FixedUpdate()
     {
         if (!broken)
@@ -38,6 +39,8 @@ public class BotController : EnemyController
         }
         Vector2 position = rigidbody2d.position;
 
+        // If the bot is supposed to travel vertically, it changes y position,
+        // otherwise it changes the x position.
         if (vertical)
         {
             position.y = position.y + Time.deltaTime * enemy.GetSpeed() * direction;
