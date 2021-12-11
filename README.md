@@ -29,3 +29,6 @@ The tutorial can be found here: https://learn.unity.com/project/ruby-s-2d-rpg.
 ## Supplemental Program
 A supplemental program to demonstrate my knowledge for the project requirments is located here:
 https://github.com/Thegamerdude1010/COP3003-SupplementalProgram.
+
+## For Professor Vanselow
+I am putting this here to ask you to focus on the supplemental program for the grade for the assignment. In the context of the assignment, I have bitten off more than I can chew. This project is finished, but not to the level of scrutiny that you required for the assignment. The supplemental program, which is in C++, is much closer to the project requirements. While I wouldn't say I abandoned this project, for the assignment I have not put in the effort. Most of my effort went into making the supplemental program because it was easier to understand the project requirements in C++ than C#. I want to submit this project because I would like to share it and maybe get some feedback, but I do not want it to severely impact my grade.
